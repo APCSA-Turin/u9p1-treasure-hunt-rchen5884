@@ -61,25 +61,25 @@ public class Player extends Sprite{
 
 
     public boolean isValid(int size, String direction) { //check grid boundaries
-        if (direction.equals("w") && getY() + 1 < size) { //?
+        if (direction.equals("w") && getY() + 1 < size) { // check if the sprite is on the top border
             return true;
-        } else if (direction.equals("a") && getX() - 1 >= 0) {
+        } else if (direction.equals("a") && getX() - 1 >= 0) { // check if the sprite is on the left border
             return true;
-        } else if (direction.equals("s") && getY() - 1 >= 0) {
+        } else if (direction.equals("s") && getY() - 1 >= 0) { // check if the sprite is on the down border
             return true;
-        } else if (direction.equals("d") && getX() + 1 < size) { // ?
+        } else if (direction.equals("d") && getX() + 1 < size) { // check if the sprite is on the right border
             return true;
         }
-        return false;
+        return false; // if no possible moves are available
     }
 
     @Override
-    public String getCoords() {
+    public String getCoords() { // returns the coordinates
         return "Player:(" + getX() + "," + getY() + ")";
     }
 
     @Override
-    public String getRowCol(int size){ 
+    public String getRowCol(int size){  // returns the row and column the player sprite is in
         return "Player:["+ (size - 1- getY())+ "]["+ (getX())+"]";
     }
 }
