@@ -8,7 +8,7 @@ public class Grid{
 
     public Grid(int size) { //initialize and create a grid with all DOT objects
         this.size = size;
-        grid = new Sprite[size][size];
+        grid = new Sprite[size][size]; // creates a grid equal to a square with "size" lengths
         
         for (int i = 0; i < grid.length; i++) {
             for (int j = 0; j < grid[0].length; j++) {
@@ -19,7 +19,7 @@ public class Grid{
         
     }
  
-    public Sprite[][] getGrid(){return grid;}  
+    public Sprite[][] getGrid(){return grid;}  // returns the grid
 
     public void placeSprite(Sprite s){ //place sprite in new spot
         grid[size - s.getY() - 1][s.getX()] = s;
