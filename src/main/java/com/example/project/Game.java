@@ -120,16 +120,16 @@ public class Game {
             if (player.isValid(size, direction)) { // if the direction is a valid place to walk
                 switch (direction) {
                     case "w": // if they choose to walk up
-                        player.interact(size, direction, 2, grid.getGrid()[size - 2 - player.getY()][player.getX()]);
+                        player.interact(size, direction, 2, grid.getGrid()[size - 2 - player.getY()][player.getX()]); //interact with the item directly above
                         break;
                     case "a": // if they choose to walk left
-                        player.interact(size, direction, 2, grid.getGrid()[size - 1 - player.getY()][player.getX() - 1]);
+                        player.interact(size, direction, 2, grid.getGrid()[size - 1 - player.getY()][player.getX() - 1]);//interact with the item directly to the left
                         break;
                     case "s": // if they choose to walk down
-                        player.interact(size, direction, 2, grid.getGrid()[size - player.getY()][player.getX()]);
+                        player.interact(size, direction, 2, grid.getGrid()[size - player.getY()][player.getX()]);//interact with the item directly below
                         break;
                     case "d": // if they choose to walk right
-                        player.interact(size, direction, 2, grid.getGrid()[size - 1 - player.getY()][player.getX() + 1]);
+                        player.interact(size, direction, 2, grid.getGrid()[size - 1 - player.getY()][player.getX() + 1]);//interact with the item directly to the right
                         break;
                 }
                 player.move(direction); // move the character in the direction chosen
@@ -143,7 +143,6 @@ public class Game {
                 quit = true;
                 grid.gameover();
             }
-
             if (player.getWin()) { // if they get the victory, win and end the game
                 quit = true;
                 grid.win();
@@ -151,7 +150,7 @@ public class Game {
         }
 
         try { // small delay after the game ends
-            Thread.sleep(3000);
+            Thread.sleep(1500);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
